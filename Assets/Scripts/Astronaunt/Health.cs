@@ -6,9 +6,11 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] private Animator healthBarAnimator;
+    [SerializeField] private AudioClip healing;
+    private AudioSource playerAudioSource;
     void Start()
     {
-        
+        playerAudioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -35,5 +37,11 @@ public class Health : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    public void AddHealth(int health)
+    {
+        this.health += health;
+        playerAudioSource.PlayOneShot(healing);
     }
 }

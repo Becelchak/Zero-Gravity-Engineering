@@ -867,7 +867,7 @@ TextureImporter:
       name: Box_green_1
       rect:
         serializedVersion: 2
-        x: 978
+        x: 979
         y: 1034
         width: 25
         height: 27
@@ -1628,7 +1628,7 @@ TextureImporter:
         width: 8
         height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1636,6 +1636,195 @@ TextureImporter:
       bones: []
       spriteID: 6814761a1ccf6ba4497b71c748c021e2
       internalID: -1076395537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glass
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ad1116c23f3124fad036305fef3920
+      internalID: -1091237332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_0_open
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1184
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9a9445ca02f244eb99303c8330dbd7
+      internalID: 692343778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_green_0_open
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1188
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f8c8577bd8dcd4b892bf0551fbb8db
+      internalID: -36695379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_green_1_open
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1184
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e4ee68d02a12c4ab0c75849b89d22d
+      internalID: -309073076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_1_open
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1184
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ea464956ad73d4ead957636fdfdc50
+      internalID: 1617902296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_2_open
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 1187
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3cdd03da0f021e4bb0f3f221c33e34d
+      internalID: -1406467174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_3
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1098
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47237be4a3ffc124f9a2fce283f59668
+      internalID: 1773131709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_3_open
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1098
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2fe8827036e32a41b2580c125d0d4ba
+      internalID: 1029251995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green_tall_box_open
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 625
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17071e0833b29547a288f9e9877f159
+      internalID: -1615091058
       vertices: []
       indices: 
       edges: []
@@ -1654,6 +1843,7 @@ TextureImporter:
       Space station_plit_3: -1978004142
       door_1: 1534524094
       Space station_outside_wall_3: -392758188
+      Green_tall_box_open: -1615091058
       Space station._wall_destroyed_5: 535408206
       Space station_plit_1: -1649434652
       Space station._wall_0: -570003076
@@ -1662,15 +1852,18 @@ TextureImporter:
       door_3: -1026167608
       MedKit: 1908606568
       Space station_plit_4: -782633309
+      Box_0_open: 692343778
       Space station._wall_4: -537708171
       Space station._wall_2: 357090454
       Barrel: -501197094
       Main_door_open_2: -685322544
+      Box_3: 1773131709
       Floor_hangar_2: 1270099877
       Box_green_1: -972578262
       door_0: -383538142
       Rop_struct_2: -1507099568
       Floor_hangar_3: -1483669716
+      Box_2_open: -1406467174
       Main_door_open_3: -1302322898
       Space station_outside_wall_1: -1041972467
       Space station_plit_0: 1042288549
@@ -1691,6 +1884,7 @@ TextureImporter:
       Space station._wall_1: 1438569226
       Space station._ountside_robe_2: 480294384
       Space station._wall_12: 28657241
+      Box_3_open: 1029251995
       Electrical panel_0: 380582611
       Space station_outside_wall_4: 287953235
       Space station_wall_1: 1558966082
@@ -1699,6 +1893,7 @@ TextureImporter:
       Generator: 1864514435
       door_2: -433466630
       Space station._wall_destroyed_0: 1303505839
+      Glass: -1091237332
       Space station._wall_3: -688357670
       Main_door_open_1: 394773898
       Small_door_2: 1127549785
@@ -1708,6 +1903,7 @@ TextureImporter:
       Space station_wall_0: 994976303
       Box_2: 1901981672
       Space station._wall_8: -1647010074
+      Box_green_0_open: -36695379
       Small_door_1: -803054544
       Big_gate_0: 1842797221
       Space station._ountside_robe_0: -72203132
@@ -1717,12 +1913,14 @@ TextureImporter:
       Generator_break: 190616734
       Space station._wall_7: 1756890842
       Space station_outside_wall_2: 474632880
+      Box_green_1_open: -309073076
       Space station_outside_wall_0: -1928372467
       Space station._ountside_robe_1: 1274382088
       Space station._ountside_robe_3: 1939936501
       Box_0: -1222573984
       Box_1: 1688135591
       Space station._wall_11: -658793771
+      Box_1_open: 1617902296
       Floor_hangar_4: 192439625
   spritePackingTag: 
   pSDRemoveMatte: 0

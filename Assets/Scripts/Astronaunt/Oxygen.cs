@@ -12,6 +12,7 @@ public class Oxygen : MonoBehaviour
     [SerializeField] private AudioClip breathing;
     [SerializeField] private AudioClip oxygen;
     [SerializeField] private AudioClip gasping;
+    [SerializeField] private AudioClip balloon;
     private float timer;
     private bool isNonOxygenArea = false;
     private bool isOxygenUp = false;
@@ -58,6 +59,15 @@ public class Oxygen : MonoBehaviour
         astronauntAudioSource.PlayOneShot(gasping);
         damageTimer = 2f;
 
+    }
+
+    public void AddOxygen(int oxygen)
+    {
+        timer += oxygen;
+        if(timer > oxygenMax)
+            timer = oxygenMax;
+        oxygenHUD.text = (Mathf.Round(timer * 100f) / 100f).ToString(CultureInfo.InvariantCulture);
+        astronauntAudioSource.PlayOneShot(balloon);
     }
 
     void OnTriggerEnter2D(Collider2D other)
