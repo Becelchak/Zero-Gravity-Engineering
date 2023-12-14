@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NonOxygen
   - DeathZone
+  - DamageObject
+  - Object
   layers:
   - Default
   - TransparentFX
