@@ -13,8 +13,8 @@ public class Generator : Interactable_Object
     [SerializeField] private List<Door> doorImportant;
     private Image fuel;
     private Image powerStatus;
-    private bool isActive = false;
-    private float fuelReserve = 0f;
+    private bool isActive = true;
+    private float fuelReserve = 1f;
     private Toggle toggle;
 
     private float playerFuelValue;
@@ -36,7 +36,8 @@ public class Generator : Interactable_Object
 
         foreach (var collider in doorImportant)
         {
-            collider.gameObject.GetComponents<BoxCollider2D>()[1].enabled = false;
+            if (!collider.name.Contains("Big"))
+                collider.gameObject.GetComponents<BoxCollider2D>()[1].enabled = false;
             collider.enabled = false;
         }
     }
@@ -58,7 +59,8 @@ public class Generator : Interactable_Object
             foreach (var collider in doorImportant)
             {
                 collider.enabled = true;
-                collider.gameObject.GetComponents<BoxCollider2D>()[1].enabled = true;
+                if(!collider.name.Contains("Big"))
+                    collider.gameObject.GetComponents<BoxCollider2D>()[1].enabled = true;
             }
         }
 
@@ -85,6 +87,14 @@ public class Generator : Interactable_Object
 
         powerStatus = panelGen.transform.GetChild(3).GetComponent<Image>();
         playerFuelValue = playerAccess.GetCanisterValue();
+    }
+
+    public void EndInteract()
+    {
+        var panelGen = GameObject.Find("Generator panel").GetComponent<CanvasGroup>();
+        panelGen.alpha = 0.0f;
+        panelGen.interactable = false;
+        panelGen.blocksRaycasts = false;
     }
 
     public void FillFuel(Toggle toggle)

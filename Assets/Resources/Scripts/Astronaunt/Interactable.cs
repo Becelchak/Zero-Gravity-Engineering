@@ -13,14 +13,24 @@ public class Interactable : MonoBehaviour
     private Interactable_Object interactable;
 
     public bool isAccessFirstBay;
-    [SerializeField] private bool haveCardFirstBay; 
+    [SerializeField] 
+    private bool haveCardFirstBay; 
     public bool isAccessSecondBay;
-    [SerializeField] private bool haveCardSecondBay;
+    [SerializeField] 
+    private bool haveCardSecondBay;
     public bool isAccessThirdBay;
-    [SerializeField] private bool haveCardThirdBay;
-    [SerializeField] private bool haveCanister;
+    [SerializeField] 
+    private bool haveCardThirdBay;
+    [SerializeField] 
+    private bool haveCanister;
     private float canisterValue = 0f;
-    [SerializeField] private AudioClip playerAccess;
+    [SerializeField] 
+    private AudioClip playerAccess;
+
+    [SerializeField] 
+    private bool haveFuse;
+
+    private int countFuse = 0;
 
     private AudioSource playerAudioSource;
     private int questItemsCount = 0;
@@ -34,7 +44,7 @@ public class Interactable : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && interactable != null)
+        if (Input.GetMouseButtonDown(0) && interactable != null)
         {
             interactable.Interact();
         }
@@ -48,6 +58,24 @@ public class Interactable : MonoBehaviour
             timerLootMessage -= Time.deltaTime;
     }
 
+
+    public void AddFuse()
+    {
+        countFuse++;
+        haveFuse = true;
+    }
+
+    public void RemoveFuse()
+    {
+        countFuse--;
+        if(countFuse <1)
+            haveFuse = false;
+    }
+
+    public bool GetFuse()
+    {
+        return haveFuse;
+    }
     public void AddCard(int number)
     {
         switch (number)
@@ -124,7 +152,6 @@ public class Interactable : MonoBehaviour
     {
         if (other.tag == "NonOxygen")
         {
-            Debug.Log("!@$");
             var number = other.name.Split(' ')[1];
             var musicManager = transform.GetChild(1).GetComponent<MusicManager>();
 
@@ -141,6 +168,7 @@ public class Interactable : MonoBehaviour
                     break;
             }
         }
+
         interactable = other.GetComponent<Interactable_Object>();
         if (interactable == null) return;
         imageCanvasGroup.alpha = 1.0f;
@@ -150,17 +178,22 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        interactable = other.GetComponent<Interactable_Object>();
-        if (interactable == null) return;
+        if (interactable == other.GetComponent<Interactable_Object>() || other.tag != "Object") return;
+        else
+        {
+            interactable = other.GetComponent<Interactable_Object>();
+        }
         imageCanvasGroup.alpha = 1.0f;
         imageCanvasGroup.blocksRaycasts = true;
         imageCanvasGroup.interactable = true;
+
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         interactable = other.GetComponent<Interactable_Object>();
         if (interactable == null) return;
+        interactable.EndInteract();
         imageCanvasGroup.alpha = 0.0f;
         imageCanvasGroup.blocksRaycasts = false;
         imageCanvasGroup.interactable = false;

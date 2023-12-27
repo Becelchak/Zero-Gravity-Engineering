@@ -61,8 +61,8 @@ public class Oxygen : MonoBehaviour
             damageTimer -= Time.deltaTime;
         if (!isOverOxygen || !(damageTimer <= 0)) return;
         astronauntAudioSource.Stop();
-        astronauntHealth.TakeDamage(2);
         astronauntAudioSource.PlayOneShot(gasping);
+        astronauntHealth.TakeDamage(10);
         damageTimer = 2f;
 
     }
@@ -88,6 +88,11 @@ public class Oxygen : MonoBehaviour
     {
         astronauntAudioSource.Stop();
         timer = 120f;
+    }
+
+    public bool isGasping()
+    {
+        return isOverOxygen;
     }
 
     void OnTriggerEnter2D(Collider2D other)

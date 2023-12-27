@@ -77,6 +77,10 @@ public class LootObject : Interactable_Object
                 playerAccess.AddQuestItem(name);
                 Destroy(gameObject);
                 break;
+            case BoxLoot.Fuse:
+                playerAccess.AddFuse();
+                Destroy(gameObject);
+                break;
         }
     }
 
@@ -91,6 +95,7 @@ public class LootObject : Interactable_Object
         FlashDrive = 6,
         Canister = 7,
         Nootebook = 8,
+        Fuse = 9,
 
     }
 }

@@ -8,7 +8,7 @@ public class Door : Interactable_Object
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip closeSound;
     private AudioSource doorAudioSource;
-    private bool isOpenDoor = false;
+    public bool isOpenDoor = false;
     private Animator animator;
     private BoxCollider2D doorBoxCollider;
 

@@ -1775,7 +1775,7 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1796,7 +1796,7 @@ TextureImporter:
         width: 20
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1817,7 +1817,7 @@ TextureImporter:
         width: 26
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1825,6 +1825,48 @@ TextureImporter:
       bones: []
       spriteID: c17071e0833b29547a288f9e9877f159
       internalID: -1615091058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space station._32_2_0
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 240
+        width: 148
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668a373f2ac5a5549b96c639b323936a
+      internalID: 1027722202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space station._32_2_1
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 128
+        width: 164
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708db0e63a8b2d64f95432944a87a015
+      internalID: 1159978751
       vertices: []
       indices: 
       edges: []
@@ -1887,6 +1929,7 @@ TextureImporter:
       Box_3_open: 1029251995
       Electrical panel_0: 380582611
       Space station_outside_wall_4: 287953235
+      Space station._32_2_1: 1159978751
       Space station_wall_1: 1558966082
       Big_Box: -1208630231
       Space station._wall_10: 1590108375
@@ -1911,6 +1954,7 @@ TextureImporter:
       Space station._wall_14: -462917780
       Space: -1845593322
       Generator_break: 190616734
+      Space station._32_2_0: 1027722202
       Space station._wall_7: 1756890842
       Space station_outside_wall_2: 474632880
       Box_green_1_open: -309073076

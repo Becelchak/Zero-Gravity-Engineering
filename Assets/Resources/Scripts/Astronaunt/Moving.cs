@@ -28,12 +28,23 @@ namespace Assets.Scripts
             var jump = Input.GetAxis("Jump");
             if (Input.GetKeyDown(KeyCode.Space))
                 OxygenJump(jump);
-            if (mousePosition.x < transform.position.x && facingRight)
+            if(Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                body.velocity = Vector2.zero;
+                playerOxygen.RemoveOxygen(4f);
+            }
+            // Right
+            if (((mousePosition.x < transform.position.x && mousePosition.y > transform.position.y)
+                 || (mousePosition.x < transform.position.x && mousePosition.y < transform.position.y))
+                && facingRight)
             {
                 FlipBody();
             }
+            //Left
             else
-            if (mousePosition.x > transform.position.x && !facingRight)
+            if (((mousePosition.x > transform.position.x && mousePosition.y > transform.position.y) 
+                 || (mousePosition.x > transform.position.x && mousePosition.y < transform.position.y))
+                && !facingRight)
             {
                 FlipBody();
             }
@@ -73,7 +84,7 @@ namespace Assets.Scripts
             mousePosition.z += Camera.main.nearClipPlane;
 
             var vector = -(transform.position - mousePosition);
-            body.AddForce(vector * amount * MaxVelocity * 4);
+            body.AddForce(vector * amount * MaxVelocity * 8);
 
             playerOxygen.RemoveOxygen(2f);
         }

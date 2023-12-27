@@ -45,4 +45,12 @@ public class DoorPanel : Interactable_Object
         canvasPanel.interactable = true;
         canvasPanel.blocksRaycasts = true;
     }
+
+    public void EndInteract()
+    {
+        var canvasPanel = panel.GetComponent<CanvasGroup>();
+        canvasPanel.alpha = 0.0f;
+        canvasPanel.interactable = false;
+        canvasPanel.blocksRaycasts = false;
+    }
 }

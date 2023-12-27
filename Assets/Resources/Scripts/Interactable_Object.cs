@@ -39,11 +39,37 @@ public class Interactable_Object : MonoBehaviour
             case ObjectType.Other:
                 GetComponent<LootObject>().Interact();
                 break;
+            case ObjectType.DoorConsole:
+                GetComponent<DoorConsole>().Interact();
+                break;
+            case ObjectType.ConsoleElectric:
+                GetComponent<ConsoleElectric>().Interact();
+                break;
             default:
                 break;
         }
     }
 
+    public void EndInteract()
+    {
+        switch (type)
+        {
+            case ObjectType.DoorPanel:
+                GetComponent<DoorPanel>().EndInteract();
+                break;
+            case ObjectType.Generator:
+                GetComponent<Generator>().EndInteract();
+                break;
+            case ObjectType.DoorConsole:
+                GetComponent<DoorConsole>().EndInteract();
+                break;
+            case ObjectType.ConsoleElectric:
+                GetComponent<ConsoleElectric>().EndInteract();
+                break;
+            default:
+                break;
+        }
+    }
     private enum ObjectType
     {
         Door = 0,
@@ -53,19 +79,7 @@ public class Interactable_Object : MonoBehaviour
         Box = 4,
         Generator = 5,
         Other = 6,
+        ConsoleElectric = 7,
     }
 
-    private enum BoxLoot
-    {
-        Nothing = 0,
-        Card1 = 1, 
-        Card2 = 2, 
-        Card3 = 3,
-        MedKit = 4,
-        OxygenKit = 5,
-        FlashDrive = 6,
-        Canister = 7,
-        Nootebook = 8,
-
-    }
 }

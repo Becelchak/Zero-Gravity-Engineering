@@ -13,14 +13,17 @@ public class Health : MonoBehaviour
     private AudioSource playerAudioSource;
     private CanvasGroup deathPanel;
     private bool isDead;
+
+    private Oxygen playerOxygen;
     void Start()
     {
         deathPanel = GameObject.Find("DeathPanel").GetComponent<CanvasGroup>();
         playerAudioSource = GetComponent<AudioSource>();
+        playerOxygen = GetComponent<Oxygen>();
     }
     void Update()
     {
-        Debug.Log($"{isDead}");
+        
         switch (health)
         {
             case > 70:
@@ -57,12 +60,16 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (damage < 1) return;
+        if (damage < 1 || isDead) return;
 
-        playerAudioSource.Stop();
-        var rnd = new System.Random();
-        var number = rnd.Next(0,2);
-        playerAudioSource.PlayOneShot(hurtPlaylist[number]);
+        var breath = Resources.Load("Sound/Sounds/Astronaunt/Breathing") as AudioClip;
+        if(!playerOxygen.isGasping())
+        {
+            playerAudioSource.Stop();
+            var rnd = new System.Random();
+            var number = rnd.Next(0, 2);
+            playerAudioSource.PlayOneShot(hurtPlaylist[number]);
+        }
 
         health -= damage;
         Debug.Log($"Take damage! Now health = {health}");
