@@ -194,6 +194,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1096798842}
   m_RootOrder: 0
@@ -230,6 +231,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 0.14549333, w: -0.9893593}
   m_LocalPosition: {x: 0.28, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1143192339}
   m_RootOrder: 0
@@ -254,7 +256,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,6 +393,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 536078327}
   m_Father: {fileID: 0}
@@ -431,6 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -463,14 +467,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1143192339 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400028, guid: 11f8561e37dc241a2a5e29f925d39c10,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 400028, guid: 11f8561e37dc241a2a5e29f925d39c10, type: 3}
   m_PrefabInstance: {fileID: 1485065203}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1245284022
@@ -552,6 +556,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.48, y: 10.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -751,13 +756,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 11f8561e37dc241a2a5e29f925d39c10, type: 3}
 --- !u!1 &1485065204 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 11f8561e37dc241a2a5e29f925d39c10,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 11f8561e37dc241a2a5e29f925d39c10, type: 3}
   m_PrefabInstance: {fileID: 1485065203}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1485065205
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -770,6 +774,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
