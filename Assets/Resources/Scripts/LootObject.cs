@@ -26,7 +26,7 @@ public class LootObject : Interactable_Object
         animator = GetComponent<Animator>();
         doorBoxCollider = GetComponent<BoxCollider2D>();
         doorAudioSource = GetComponent<AudioSource>();
-        var player = GameObject.Find("Player");
+        var player = GameObject.Find("Player-body");
         playerAccess = player.GetComponent<Interactable>();
         playerHealth = player.GetComponent<Health>();
         playerOxygen = player.GetComponent<Oxygen>();

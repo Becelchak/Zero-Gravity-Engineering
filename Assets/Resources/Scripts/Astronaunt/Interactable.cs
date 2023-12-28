@@ -35,6 +35,8 @@ public class Interactable : MonoBehaviour
     private AudioSource playerAudioSource;
     private int questItemsCount = 0;
     [SerializeField] private AudioClip questtakeAudioClip;
+
+    private bool isStartComplited;
     void Start()
     {
         imageCanvasGroup = InteractImage.GetComponent<CanvasGroup>();
@@ -153,7 +155,7 @@ public class Interactable : MonoBehaviour
         if (other.tag == "NonOxygen")
         {
             var number = other.name.Split(' ')[1];
-            var musicManager = transform.GetChild(1).GetComponent<MusicManager>();
+            var musicManager = transform.gameObject.GetComponentInParent<MusicManager>();
 
             switch (number)
             {
@@ -168,6 +170,9 @@ public class Interactable : MonoBehaviour
                     break;
             }
         }
+
+        if(other.tag == "StartZone")
+            isStartComplited = true;
 
         interactable = other.GetComponent<Interactable_Object>();
         if (interactable == null) return;
@@ -197,5 +202,10 @@ public class Interactable : MonoBehaviour
         imageCanvasGroup.alpha = 0.0f;
         imageCanvasGroup.blocksRaycasts = false;
         imageCanvasGroup.interactable = false;
+    }
+
+    public bool GetStartStatus()
+    {
+        return isStartComplited;
     }
 }

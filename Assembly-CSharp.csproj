@@ -61,6 +61,7 @@
     <Compile Include="Assets\Resources\Scripts\AsteroidLogic.cs" />
     <Compile Include="Assets\Resources\Scripts\Door.cs" />
     <Compile Include="Assets\Resources\Scripts\DoorConsoleLogic.cs" />
+    <Compile Include="Assets\Resources\Scripts\Astronaunt\BoneRotateLimit.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\Moving.cs" />
     <Compile Include="Assets\Resources\Scripts\Interactable_Object.cs" />
     <Compile Include="Assets\Resources\Scripts\DoorConsole.cs" />
@@ -71,10 +72,12 @@
     <Compile Include="Assets\Resources\Scripts\Box.cs" />
     <Compile Include="Assets\Resources\Scripts\Generator.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\Interactable.cs" />
+    <Compile Include="Assets\Resources\Scripts\Astronaunt\FollowPlayer.cs" />
     <Compile Include="Assets\Resources\Scripts\DoorPanel.cs" />
     <Compile Include="Assets\Resources\Scripts\LootObject.cs" />
     <Compile Include="Assets\Resources\Scripts\ConsoleElectric.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\MusicManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Astronaunt\HandUse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

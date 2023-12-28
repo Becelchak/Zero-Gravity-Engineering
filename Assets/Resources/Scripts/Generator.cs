@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Generator : Interactable_Object
@@ -11,6 +12,7 @@ public class Generator : Interactable_Object
     private AudioSource doorAudioSource;
     [SerializeField] private List<Button> doorButtonsPowerOff;
     [SerializeField] private List<Door> doorImportant;
+    [SerializeField]
     private Image fuel;
     private Image powerStatus;
     private bool isActive = true;
@@ -20,14 +22,21 @@ public class Generator : Interactable_Object
     private float playerFuelValue;
     private Interactable playerAccess;
 
+    private AudioSource offAudioSource;
+    private Light2D globalLight;
+    private Light2D playerFlashlight;
+
     void Start()
     {
-        var player = GameObject.Find("Player");
+        var player = GameObject.Find("Player-body");
         playerAccess = player.GetComponent<Interactable>();
+
+        offAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
+        globalLight = GameObject.Find("Global light").GetComponent<Light2D>();
+        playerFlashlight = GameObject.Find("Flashlight").GetComponent<Light2D>();
 
         lootUI = GameObject.Find("Loot message");
         doorAudioSource = GetComponent<AudioSource>();
-        fuel = GameObject.Find("Fuel reserve").GetComponent<Image>();
         fuelReserve = fuel.fillAmount;
         foreach (var button in doorButtonsPowerOn)
         {
@@ -66,7 +75,8 @@ public class Generator : Interactable_Object
 
         if (fuel.fillAmount <= 0f)
         {
-            GeneratorPowerOff();
+            if(playerAccess.GetStartStatus())
+                GeneratorPowerOff();
             foreach (var button in doorButtonsPowerOn)
             {
                 button.interactable = false;
@@ -127,11 +137,29 @@ public class Generator : Interactable_Object
     }
     public void GeneratorPowerOn()
     {
-        isActive = true;
+        if (!isActive)
+        {
+            globalLight.intensity = 1f;
+            playerFlashlight.enabled = false;
+            isActive = true;
+        }
     }
 
     public void GeneratorPowerOff()
     {
-        isActive = false;
+        if(isActive)
+        {
+            globalLight.intensity = 0.09f;
+            playerFlashlight.enabled = true;
+
+            var audioFlash = playerFlashlight.gameObject.GetComponent<AudioSource>();
+
+            if(!audioFlash.isPlaying)
+                audioFlash.Play(1);
+            if (!offAudioSource.isPlaying)
+                offAudioSource.Play();
+
+            isActive = false;
+        }
     }
 }

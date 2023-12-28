@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace Assets.Scripts
 {
@@ -7,14 +8,18 @@ namespace Assets.Scripts
         [SerializeField] private float MaxVelocity = 3f;
         [SerializeField] private float RotationSpeed = 0.02f;
         private Rigidbody2D body;
-        private bool facingRight = false;
-        private bool needFreeze = false;
+        //private Rigidbody2D parentBody;
+        public bool facingRight;
+        private bool needFreeze;
+
+        private HandUse handObject;
 
         private Oxygen playerOxygen;
         void Start()
         {
+            handObject = GetComponent<HandUse>();
             body = GetComponent<Rigidbody2D>();
-            playerOxygen = GetComponent<Oxygen>();
+            playerOxygen = GetComponentInParent<Oxygen>();
         }
 
         void Update()
@@ -84,12 +89,12 @@ namespace Assets.Scripts
             mousePosition.z += Camera.main.nearClipPlane;
 
             var vector = -(transform.position - mousePosition);
-            body.AddForce(vector * amount * MaxVelocity * 8);
+            body.AddForce(vector * amount * MaxVelocity * 16);
 
             playerOxygen.RemoveOxygen(2f);
         }
 
-        private void FlipBody()
+        public void FlipBody()
         {
             facingRight = !facingRight;
             transform.Rotate(Vector3.up * 180);

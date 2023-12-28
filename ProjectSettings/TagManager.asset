@@ -8,6 +8,9 @@ TagManager:
   - DeathZone
   - DamageObject
   - Object
+  - StartZone
+  - PlayerHand
+  - Transferable
   layers:
   - Default
   - TransparentFX

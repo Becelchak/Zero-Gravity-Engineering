@@ -19,7 +19,7 @@ public class AsteroidLogic : MonoBehaviour
 
     void Start()
     {
-        playerHealth = GameObject.Find("Player").GetComponent<Health>();
+        playerHealth = GameObject.Find("Player-body").GetComponent<Health>();
         body = GetComponent<Rigidbody2D>();
         asteroidAnim = GetComponent<Animator>();
         body.AddForce(transform.right * speed, ForceMode2D.Impulse);
@@ -51,7 +51,7 @@ public class AsteroidLogic : MonoBehaviour
                     SpawnAsteroides();
             }
 
-            Debug.Log($"{name} exploded!");
+            //Debug.Log($"{name} exploded!");
             Destroy(gameObject, 0.5f);
         }
     }

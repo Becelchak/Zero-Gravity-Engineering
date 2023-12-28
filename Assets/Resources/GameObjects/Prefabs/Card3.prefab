@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5083737622519967203}
   m_Layer: 0
   m_Name: Card3
-  m_TagString: Object
+  m_TagString: Transferable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
