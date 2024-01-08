@@ -8,13 +8,12 @@ namespace Assets.Scripts
         [SerializeField] private float MaxVelocity = 3f;
         [SerializeField] private float RotationSpeed = 0.02f;
         private Rigidbody2D body;
-        //private Rigidbody2D parentBody;
         public bool facingRight;
         private bool needFreeze;
 
         private HandUse handObject;
-
         private Oxygen playerOxygen;
+
         void Start()
         {
             handObject = GetComponent<HandUse>();
@@ -25,7 +24,10 @@ namespace Assets.Scripts
         void Update()
         {
             if(needFreeze)
+            {
+                body.velocity = Vector2.zero;
                 return;
+            }
             // Mouse control
             var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z += Camera.main.nearClipPlane;
@@ -108,6 +110,16 @@ namespace Assets.Scripts
         public void Freeze()
         {
             needFreeze = true;
+        }
+
+        public void UnFreeze()
+        {
+            needFreeze = false;
+        }
+
+        public bool GetFreezeStatus()
+        {
+            return needFreeze;
         }
     }
 }

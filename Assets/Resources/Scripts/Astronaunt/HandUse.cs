@@ -26,6 +26,9 @@ public class HandUse : MonoBehaviour
         if (hand.transform.localPosition.x != 0.03f || hand.transform.localPosition.y != 0.44f)
             hand.transform.localPosition = new Vector3(0.03f, 0.44f, 0);
 
+
+        if(playerMoving.GetFreezeStatus()) return;
+
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z += Camera.main.nearClipPlane;
         if (Input.GetMouseButton(1))
@@ -82,11 +85,11 @@ public class HandUse : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Transferable")
-        {
-            nowUsedObject = other.gameObject;
-        }
-        else if(other.tag == "Object")
+        //if (other.tag == "Transferable")
+        //{
+        //    nowUsedObject = other.gameObject;
+        //}
+        if(other.tag == "Object")
         {
             nowHandleObject = other.gameObject;
         }

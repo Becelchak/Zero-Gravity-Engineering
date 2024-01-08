@@ -34,6 +34,9 @@ public class Interactable : MonoBehaviour
 
     private AudioSource playerAudioSource;
     private int questItemsCount = 0;
+    public bool firstItemHave;
+    public bool secondItemHave;
+    public bool thirdItemHave;
     [SerializeField] private AudioClip questtakeAudioClip;
 
     private bool isStartComplited;
@@ -152,7 +155,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "NonOxygen")
+        if (other.tag == "MusicZone")
         {
             var number = other.name.Split(' ')[1];
             var musicManager = transform.gameObject.GetComponentInParent<MusicManager>();
@@ -160,13 +163,13 @@ public class Interactable : MonoBehaviour
             switch (number)
             {
                 case "1":
-                    musicManager.SetParameterCounter(0,1);
+                    musicManager.SetParameterCounter(0,2);
                     break;
                 case "2":
-                    musicManager.SetParameterCounter(2, 3);
+                    musicManager.SetParameterCounter(3, 4);
                     break;
                 case "3":
-                    musicManager.SetParameterCounter(4, 6);
+                    musicManager.SetParameterCounter(5, 6);
                     break;
             }
         }
@@ -183,8 +186,9 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (interactable == other.GetComponent<Interactable_Object>() || other.tag != "Object") return;
-        else
+        Debug.Log($"{interactable}");
+        if (interactable == other.GetComponent<Interactable_Object>() || other.tag != "Object" || interactable == null) return;
+        else if (interactable == null)
         {
             interactable = other.GetComponent<Interactable_Object>();
         }
@@ -196,16 +200,41 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        interactable = other.GetComponent<Interactable_Object>();
         if (interactable == null) return;
-        interactable.EndInteract();
+        Debug.Log("END");
+        RemoveInterectable();
         imageCanvasGroup.alpha = 0.0f;
         imageCanvasGroup.blocksRaycasts = false;
         imageCanvasGroup.interactable = false;
     }
 
+    public void RemoveInterectable()
+    {
+        interactable = null;
+    }
+
     public bool GetStartStatus()
     {
         return isStartComplited;
+    }
+
+    public int GetCountQuestItems()
+    {
+        return questItemsCount;
+    }
+
+    public bool GetFirstItemStatus()
+    {
+        return firstItemHave;
+    }
+
+    public bool GetSecondItemStatus()
+    {
+        return secondItemHave;
+    }
+
+    public bool GetThirdItemStatus()
+    {
+        return thirdItemHave;
     }
 }

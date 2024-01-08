@@ -26,10 +26,13 @@ public class Generator : Interactable_Object
     private Light2D globalLight;
     private Light2D playerFlashlight;
 
+    private CanvasGroup panelGen;
+
     void Start()
     {
         var player = GameObject.Find("Player-body");
         playerAccess = player.GetComponent<Interactable>();
+        panelGen = GameObject.Find("Generator panel").GetComponent<CanvasGroup>();
 
         offAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
         globalLight = GameObject.Find("Global light").GetComponent<Light2D>();
@@ -90,7 +93,8 @@ public class Generator : Interactable_Object
 
     public void Interact()
     {
-        var panelGen = GameObject.Find("Generator panel").GetComponent<CanvasGroup>();
+        if(panelGen.alpha == 1.0f) return;
+
         panelGen.alpha = 1.0f;
         panelGen.interactable = true;
         panelGen.blocksRaycasts = true;
@@ -101,7 +105,6 @@ public class Generator : Interactable_Object
 
     public void EndInteract()
     {
-        var panelGen = GameObject.Find("Generator panel").GetComponent<CanvasGroup>();
         panelGen.alpha = 0.0f;
         panelGen.interactable = false;
         panelGen.blocksRaycasts = false;
@@ -161,5 +164,10 @@ public class Generator : Interactable_Object
 
             isActive = false;
         }
+    }
+
+    public bool PowerStatus()
+    {
+        return isActive;
     }
 }

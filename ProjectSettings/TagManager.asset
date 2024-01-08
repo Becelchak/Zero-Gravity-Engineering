@@ -11,6 +11,7 @@ TagManager:
   - StartZone
   - PlayerHand
   - Transferable
+  - MusicZone
   layers:
   - Default
   - TransparentFX

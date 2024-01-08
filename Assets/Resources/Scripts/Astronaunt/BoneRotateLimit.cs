@@ -69,7 +69,7 @@ public class BoneRotateLimit : MonoBehaviour
             clamp.bone.localEulerAngles = newV3;
         }
 
-        if (boneBody.velocity.magnitude > 2)
+        if (boneBody.velocity.magnitude > 1.5f)
             boneBody.velocity = Vector2.zero;
 
         if (transform.localPosition.x < -0.196f || transform.localPosition.y != -0.197f)

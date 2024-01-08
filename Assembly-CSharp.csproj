@@ -56,6 +56,9 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Scripts\Astronaunt\HandUse.cs" />
+    <Compile Include="Assets\Resources\Scripts\DialogCaller.cs" />
+    <Compile Include="Assets\Resources\Scripts\TotalQuestItemsCollected.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\Oxygen.cs" />
     <Compile Include="Assets\Resources\Scripts\UI.cs" />
     <Compile Include="Assets\Resources\Scripts\AsteroidLogic.cs" />
@@ -71,13 +74,14 @@
     <Compile Include="Assets\Resources\Scripts\Astronaunt\Health.cs" />
     <Compile Include="Assets\Resources\Scripts\Box.cs" />
     <Compile Include="Assets\Resources\Scripts\Generator.cs" />
+    <Compile Include="Assets\Resources\Scripts\DialogLogic.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\Interactable.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\FollowPlayer.cs" />
     <Compile Include="Assets\Resources\Scripts\DoorPanel.cs" />
     <Compile Include="Assets\Resources\Scripts\LootObject.cs" />
     <Compile Include="Assets\Resources\Scripts\ConsoleElectric.cs" />
     <Compile Include="Assets\Resources\Scripts\Astronaunt\MusicManager.cs" />
-    <Compile Include="Assets\Resources\Scripts\Astronaunt\HandUse.cs" />
+    <Compile Include="Assets\Resources\Scripts\MenuHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

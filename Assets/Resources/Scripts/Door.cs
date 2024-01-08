@@ -32,7 +32,7 @@ public class Door : Interactable_Object
         animator = GetComponent<Animator>();
         doorBoxCollider = GetComponent<BoxCollider2D>();
         doorAudioSource = GetComponent<AudioSource>();
-        var player = GameObject.Find("Player");
+        var player = GameObject.Find("Player-body");
         playerAccess = player.GetComponent<Interactable>();
         playerHealth = player.GetComponent<Health>();
         playerOxygen = player.GetComponent<Oxygen>();
@@ -59,6 +59,13 @@ public class Door : Interactable_Object
             DoorOpen();
         else if (isOpenDoor)
             DoorCLose();
+    }
+
+    public void EndInteract()
+    {
+        if (isMainDoor) return;
+
+        playerAccess.RemoveInterectable();
     }
 
     public void DoorOpen()

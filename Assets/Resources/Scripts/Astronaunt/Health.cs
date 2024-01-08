@@ -15,15 +15,19 @@ public class Health : MonoBehaviour
     private bool isDead;
 
     private Oxygen playerOxygen;
+    private Moving playerMoving;
     void Start()
     {
         deathPanel = GameObject.Find("DeathPanel").GetComponent<CanvasGroup>();
         playerAudioSource = GetComponent<AudioSource>();
         playerOxygen = GetComponent<Oxygen>();
+        playerMoving = GetComponent<Moving>();
     }
     void Update()
     {
         
+        if(playerMoving.GetFreezeStatus()) return;
+
         switch (health)
         {
             case > 70:

@@ -57,8 +57,11 @@ public class Interactable_Object : MonoBehaviour
             case ObjectType.DoorPanel:
                 GetComponent<DoorPanel>().EndInteract();
                 break;
+            case ObjectType.Door:
+                GetComponent<Door>().EndInteract();
+                break;
             case ObjectType.Generator:
-                GetComponent<Generator>().EndInteract();
+                //GetComponent<Generator>().EndInteract();
                 break;
             case ObjectType.DoorConsole:
                 GetComponent<DoorConsole>().EndInteract();

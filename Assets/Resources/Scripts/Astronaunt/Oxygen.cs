@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,17 +19,19 @@ public class Oxygen : MonoBehaviour
 
     private Health astronauntHealth;
     private float damageTimer = 2f;
+    private Moving playerMoving;
     void Start()
     {
         timer = oxygenMax;
         oxygenHUD.text = oxygenMax.ToString(CultureInfo.InvariantCulture);
         astronauntAudioSource = GetComponent<AudioSource>();
         astronauntHealth = GetComponent<Health>();
+        playerMoving = GetComponent<Moving>();
     }
 
     void Update()
     {
-        if(astronauntHealth.GetLiveStatus()) return;
+        if(astronauntHealth.GetLiveStatus() || playerMoving.GetFreezeStatus()) return;
 
         oxygenHUD.text = (Mathf.Round(timer * 100f) / 100f).ToString(CultureInfo.InvariantCulture);
         if (!astronauntAudioSource.isPlaying && isNonOxygenArea)
