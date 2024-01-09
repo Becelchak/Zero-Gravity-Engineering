@@ -48,7 +48,7 @@ public class DoorConsoleLogic : MonoBehaviour
 
         numberPasswordEnter.text = passwordEnter;
 
-        progressBar.fillAmount -= Time.deltaTime / 32;
+        progressBar.fillAmount -= Time.deltaTime / 40;
 
         if (progressBar.fillAmount <= 0)
         {

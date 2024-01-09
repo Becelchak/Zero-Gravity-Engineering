@@ -35,7 +35,7 @@ namespace Assets.Scripts
             var jump = Input.GetAxis("Jump");
             if (Input.GetKeyDown(KeyCode.Space))
                 OxygenJump(jump);
-            if(Input.GetKeyDown(KeyCode.LeftControl))
+            if(Input.GetKeyDown(KeyCode.V))
             {
                 body.velocity = Vector2.zero;
                 playerOxygen.RemoveOxygen(4f);

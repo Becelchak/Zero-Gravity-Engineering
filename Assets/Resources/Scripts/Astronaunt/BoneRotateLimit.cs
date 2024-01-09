@@ -42,7 +42,7 @@ public class BoneRotateLimit : MonoBehaviour
             clamp.maxZ = Mathf.Clamp(clamp.maxZ, 0, 360);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             boneBody.velocity = Vector2.zero;
         }

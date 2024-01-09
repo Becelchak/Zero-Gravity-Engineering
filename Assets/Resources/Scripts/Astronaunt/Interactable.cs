@@ -186,15 +186,18 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log($"{interactable}");
-        if (interactable == other.GetComponent<Interactable_Object>() || other.tag != "Object" || interactable == null) return;
+        //Debug.Log($"{interactable}");
+        if ((interactable == other.GetComponent<Interactable_Object>() || other.tag != "Object") && interactable == null) return;
         else if (interactable == null)
         {
             interactable = other.GetComponent<Interactable_Object>();
         }
-        imageCanvasGroup.alpha = 1.0f;
-        imageCanvasGroup.blocksRaycasts = true;
-        imageCanvasGroup.interactable = true;
+        if(other.tag != "ObjectTileMap")
+        {
+            imageCanvasGroup.alpha = 1.0f;
+            imageCanvasGroup.blocksRaycasts = true;
+            imageCanvasGroup.interactable = true;
+        }
 
     }
 
@@ -202,6 +205,7 @@ public class Interactable : MonoBehaviour
     {
         if (interactable == null) return;
         Debug.Log("END");
+        interactable.EndInteract();
         RemoveInterectable();
         imageCanvasGroup.alpha = 0.0f;
         imageCanvasGroup.blocksRaycasts = false;

@@ -64,7 +64,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (damage < 1 || isDead) return;
+        if (damage < 1 || isDead || playerMoving.GetFreezeStatus()) return;
 
         var breath = Resources.Load("Sound/Sounds/Astronaunt/Breathing") as AudioClip;
         if(!playerOxygen.isGasping())

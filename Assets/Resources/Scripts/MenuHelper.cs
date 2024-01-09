@@ -20,7 +20,7 @@ public class MenuHelper : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             menuCanvasGroup.alpha = 1;
             menuCanvasGroup.interactable = true;

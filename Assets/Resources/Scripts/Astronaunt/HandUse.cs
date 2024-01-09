@@ -89,7 +89,7 @@ public class HandUse : MonoBehaviour
         //{
         //    nowUsedObject = other.gameObject;
         //}
-        if(other.tag == "Object")
+        if(other.tag is "Object" or "ObjectTileMap")
         {
             nowHandleObject = other.gameObject;
         }

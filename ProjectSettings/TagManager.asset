@@ -12,6 +12,7 @@ TagManager:
   - PlayerHand
   - Transferable
   - MusicZone
+  - ObjectTileMap
   layers:
   - Default
   - TransparentFX

@@ -50,14 +50,29 @@ public class LootObject : Interactable_Object
                 break;
             case BoxLoot.Card1:
                 playerAccess.AddCard(1);
+                var canvasLootUI2 = lootUI.GetComponent<CanvasGroup>();
+                var textLootMessage2 = lootUI.GetComponentInChildren<Text>();
+                canvasLootUI2.alpha = 1.0f;
+                canvasLootUI2.blocksRaycasts = true;
+                textLootMessage2.text = $"Вы получили 1 доступ!";
                 Destroy(gameObject);
                 break;
             case BoxLoot.Card2:
                 playerAccess.AddCard(2);
+                var canvasLootUI3 = lootUI.GetComponent<CanvasGroup>();
+                var textLootMessage = lootUI.GetComponentInChildren<Text>();
+                canvasLootUI3.alpha = 1.0f;
+                canvasLootUI3.blocksRaycasts = true;
+                textLootMessage.text = $"Вы получили 2 доступ!";
                 Destroy(gameObject);
                 break;
             case BoxLoot.Card3:
                 playerAccess.AddCard(3);
+                var canvasLootUI4 = lootUI.GetComponent<CanvasGroup>();
+                var textLootMessage4 = lootUI.GetComponentInChildren<Text>();
+                canvasLootUI4.alpha = 1.0f;
+                canvasLootUI4.blocksRaycasts = true;
+                textLootMessage4.text = $"Вы получили 3 доступ!";
                 Destroy(gameObject);
                 break;
             case BoxLoot.Canister:

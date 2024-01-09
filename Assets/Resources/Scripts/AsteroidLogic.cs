@@ -74,7 +74,7 @@ public class AsteroidLogic : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         var audio = GetComponent<AudioSource>();
-        if (collision.transform.CompareTag("Object") && canExplode)
+        if ((collision.transform.CompareTag("Object") || collision.transform.CompareTag("ObjectTileMap")) && canExplode)
         {
             isExplode = true;
             asteroidAnim.SetTrigger("Explode");
